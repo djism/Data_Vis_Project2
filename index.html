@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Insights Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-chart-network"></i>
+                <h1>Data Insights Explorer(Adult Census Data)</h1>
+            </div>
+            <p>Interactive visualization platform for dimensional analysis and clustering</p>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-intro">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-info-circle"></i></div>
+                <div class="info-content">
+                    <h3>Welcome to Data Insights Explorer</h3>
+                    <p>This dashboard helps you explore high-dimensional data through PCA and clustering techniques. Click on the visualizations to interact with the data.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <div class="header-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="header-content">
+                        <h2>Principal Component Analysis</h2>
+                        <p>Click on a bar to select dimensionality</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <svg id="screePlot" width="550" height="350"></svg>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="header-icon"><i class="fas fa-th"></i></div>
+                    <div class="header-content">
+                        <h2>Scatterplot Matrix</h2>
+                        <p>Relationships between top attributes</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="scatterMatrix"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <div class="header-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="header-content">
+                        <h2>K-Means Clustering</h2>
+                        <p>Click on a bar to select number of clusters</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <svg id="elbowPlot" width="550" height="350"></svg>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="header-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="header-content">
+                        <h2>PCA Biplot</h2>
+                        <p>Data points in 2D principal component space</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <svg id="biplot" width="550" height="350"></svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="attributes-section">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i> Top Influential Attributes</h2>
+                <p>These variables have the most impact on your data's variance</p>
+            </div>
+            <div class="attributes-grid" id="attributesTable">
+                <!-- Attributes will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><i class="fas fa-chart-line"></i> Data Insights Explorer | Created with D3.js</p>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link"><i class="fas fa-book"></i> Documentation</a>
+                <a href="#" class="footer-link"><i class="fas fa-question-circle"></i> Help</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
